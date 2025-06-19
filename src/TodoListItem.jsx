@@ -2,11 +2,20 @@ import { useDispatch } from "react-redux";
 import { deleteTodo, markTodoAsCompleted } from "./thunks";
 import styled from 'styled-components';
 
+const getBackgroundColor = ({ important }) => {
+  if (important) {
+    return 'background-color: red;';
+  } else {
+    return 'background-color: #888;';
+  }
+}
+
 const CardContainer = styled.div`
-  ${props => props.important && 'background-color: red;'}
+  ${getBackgroundColor}
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   padding: 16px;
+  margin: 16px 0;
 `;
 
 export default function TodoListItem({ todo }) {
