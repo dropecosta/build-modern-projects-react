@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://5lp3xl1v-3000.uks1.devtunnels.ms/',
+        target: '', // Replace with your API base URL or your local tunnel URL
         changeOrigin: true,
       }
     }
